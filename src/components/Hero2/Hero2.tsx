@@ -56,10 +56,9 @@ export const Hero2 = () => {
         <HeroTrailerBox>
           <iframe
             title="YouTube Video"
-            width="800"
-            height="500"
+            style={{ width: "100%", height: "100%" }}
             src="https://www.youtube.com/embed/32RAq6JzY-w?si=iSYgOno2yqYGMCig"
-            allow="fullscreen"
+            allowFullScreen
           ></iframe>
         </HeroTrailerBox>
       ) : (

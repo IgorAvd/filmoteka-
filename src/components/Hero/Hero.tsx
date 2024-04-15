@@ -60,7 +60,6 @@ export const Hero = () => {
             // width="800"
             // height="500"
             src="https://www.youtube.com/embed/a8Gx8wiNbs8"
-            allow="fullscreen"
             allowFullScreen
           ></iframe>
         </HeroTrailerBox>
