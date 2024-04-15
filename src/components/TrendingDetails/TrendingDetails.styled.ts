@@ -94,3 +94,17 @@ export const TrendingDetailsVideoBox = {
    alignItems: "center",
    marginTop: "40px",
 }
+export const TrendingTrailerBox = styled.div`
+// position: relative;
+// top: 138px;
+display: flex;
+margin: 60px auto 0;
+// align-items: center;
+// justify-content: center; 
+ width: 800px; 
+  height: 600px; 
+@media  (max-width: 850px) {
+  width: 100%; 
+    height: 100%;
+  }
+`;

@@ -15,6 +15,8 @@ padding: 40px 40px;
 export const TrendingBox = styled.div`
 display: flex;
 justify-content: space-between;
+align-items: center;
+
 `;
 
 export const TrendingBoxText = styled.span` 

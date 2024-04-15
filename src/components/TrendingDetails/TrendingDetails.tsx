@@ -11,6 +11,7 @@ import {
   TrendingDetailsWrapper,
   TrendingDetailsWrapperDescription,
   TrendingImgTitleBox,
+  TrendingTrailerBox,
 } from "./TrendingDetails.styled";
 import { Box, Button } from "@mui/material";
 
@@ -95,7 +96,7 @@ const TrendingDetails = () => {
             src={
               trendingDetails.poster_path
                 ? `https://image.tmdb.org/t/p/w200${trendingDetails.poster_path}`
-                : ""
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2aL_HlffoXMrgiodMTTldQmRpCJIJ9T6jOLN9hmm_kQ&s"
             }
             alt={trendingDetails.original_title}
           />
@@ -148,17 +149,27 @@ const TrendingDetails = () => {
       </TrendingDetailsBtnBox>
 
       {videoKey && (
-        <Box sx={TrendingDetailsVideoBox}>
+        // <Box sx={TrendingDetailsVideoBox}>
+        //   <iframe
+        //     width="800"
+        //     height="500"
+        //     src={`https://www.youtube.com/embed/${videoKey}`}
+        //     title="Movie Trailer"
+        //     allow="fullscreen"
+        //     allowFullScreen
+        //     style={{ position: "absolute", top: "122px" }}
+        //   ></iframe>
+        // </Box>
+        <TrendingTrailerBox>
+          {/* <Box sx={TrendingDetailsVideoBox}> */}
           <iframe
-            width="800"
-            height="500"
             src={`https://www.youtube.com/embed/${videoKey}`}
             title="Movie Trailer"
-            allow="fullscreen"
             allowFullScreen
-            style={{ position: "absolute", top: "122px" }}
+            style={{ width: "100%", height: "100%" }}
           ></iframe>
-        </Box>
+          {/* </Box> */}
+        </TrendingTrailerBox>
       )}
 
       <Suspense fallback={<div>Loading page...</div>}>
