@@ -15,7 +15,16 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 width: 250px;
- margin-top: 20px;     
+ margin-top: 20px;   
+ @media (max-width: 1210px) {    
+   width: 230px;
+  }  
+   @media (max-width: 1080px) {    
+width: 300px;
+  }  
+   @media (max-width: 750px) {    
+width: 280px;
+  } 
 `;
 
 export const TrendingItemTitleMovie = styled.h2`

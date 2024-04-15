@@ -6,7 +6,7 @@ import {
   TrendingLi,
   buttonStyles,
 } from "./TrendingItem.styled";
-import { Button, Skeleton } from "@mui/material";
+import { Button } from "@mui/material";
 
 type TrendingItemProp = {
   movie: {

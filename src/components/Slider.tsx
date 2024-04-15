@@ -54,9 +54,9 @@ const Slider = () => {
           <li className="splide__slide">
             <Hero />
           </li>
-          {/* <li className="splide__slide">
+          <li className="splide__slide">
             <Hero2 />
-          </li> */}
+          </li>
           {/* <li className="splide__slide">Slide 03</li> */}
         </ul>
       </div>

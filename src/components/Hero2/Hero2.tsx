@@ -3,7 +3,9 @@ import {
   HeroBtnStyle,
   HeroBtnText,
   HeroDescriptionBox,
+  HeroDescriptionContainer,
   HeroDescriptionTextStyle,
+  HeroDescriptionWrapper,
   HeroMainTextBox,
   HeroMainTextStyle,
   HeroSpan,
@@ -86,32 +88,38 @@ export const Hero2 = () => {
           <HeroSpan>Adventure</HeroSpan>
           <HeroSpan>Crime</HeroSpan>
         </div>
-        <div>
-          <img
-            src={GroupImage}
-            width="30"
-            height="30"
-            alt=" calendar"
-            style={{ marginLeft: "30px" }}
-          />
-          <HeroDescriptionTextStyle>2023</HeroDescriptionTextStyle>
-          <img
-            src={Clock}
-            width="20"
-            height="20"
-            alt=" calendar"
-            style={{ marginLeft: "30px" }}
-          />
-          <HeroDescriptionTextStyle>2:09:00</HeroDescriptionTextStyle>
-          <img
-            src={Star}
-            width="20"
-            height="20"
-            alt=" calendar"
-            style={{ marginLeft: "30px" }}
-          />
-          <HeroDescriptionTextStyle>5.8</HeroDescriptionTextStyle>
-        </div>
+        <HeroDescriptionContainer>
+          <HeroDescriptionWrapper>
+            <img
+              src={GroupImage}
+              width="30"
+              height="30"
+              alt=" calendar"
+              style={{ marginLeft: "30px" }}
+            />
+            <HeroDescriptionTextStyle>2023</HeroDescriptionTextStyle>
+          </HeroDescriptionWrapper>
+          <HeroDescriptionWrapper>
+            <img
+              src={Clock}
+              width="20"
+              height="20"
+              alt=" calendar"
+              style={{ marginLeft: "30px" }}
+            />
+            <HeroDescriptionTextStyle>2:09:00</HeroDescriptionTextStyle>
+          </HeroDescriptionWrapper>
+          <HeroDescriptionWrapper>
+            <img
+              src={Star}
+              width="20"
+              height="20"
+              alt=" calendar"
+              style={{ marginLeft: "30px" }}
+            />
+            <HeroDescriptionTextStyle>5.8</HeroDescriptionTextStyle>
+          </HeroDescriptionWrapper>
+        </HeroDescriptionContainer>
       </HeroDescriptionBox>
       <HeroMainTextBox>
         <HeroMainTextStyle>

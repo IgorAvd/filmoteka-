@@ -10,6 +10,7 @@ import {
   TrendingDetailsVideoBox,
   TrendingDetailsWrapper,
   TrendingDetailsWrapperDescription,
+  TrendingImgTitleBox,
 } from "./TrendingDetails.styled";
 import { Box, Button } from "@mui/material";
 
@@ -89,7 +90,7 @@ const TrendingDetails = () => {
     <TrendingDetailsContainer>
       <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
       <TrendingDetailsWrapper>
-        <div>
+        <TrendingImgTitleBox>
           <img
             src={
               trendingDetails.poster_path
@@ -98,16 +99,16 @@ const TrendingDetails = () => {
             }
             alt={trendingDetails.original_title}
           />
-        </div>
-        <TrendingDetailsWrapperDescription>
           <TrendingDetailsTitle>
             {trendingDetails.original_title} ({releaseYear})
           </TrendingDetailsTitle>
+        </TrendingImgTitleBox>
+        <TrendingDetailsWrapperDescription>
           <span>
             <strong>Overview:</strong> {trendingDetails.overview}
           </span>
           <br />
-          <span style={{ display: "block", marginBottom: "10px" }}>
+          <span>
             <strong>User score:</strong>{" "}
             {Math.round(trendingDetails.vote_average! * 10)}%
           </span>

@@ -27,6 +27,9 @@ export const HeroSpan = styled.span`
    @media  (max-width: 500px) {
 font-size: 17px;
   }
+  @media  (max-width: 360px) {
+font-size: 15px;
+  }
 `;
 
 export const HeroTrailerBox = styled.div`

@@ -37,7 +37,7 @@ const Cast = () => {
                 src={
                   credit.profile_path
                     ? `https://image.tmdb.org/t/p/w200${credit.profile_path}`
-                    : ""
+                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2aL_HlffoXMrgiodMTTldQmRpCJIJ9T6jOLN9hmm_kQ&s"
                 }
                 alt={credit.original_name}
               />
