@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllMovie } from "../../services/api";
 import { TrendingList } from "../TrendingList/TrendingList";
-import { Box, Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { useAppSelector } from "../../hooks";
 import { selectSearchBoxValue } from "../../redux/SearchBox/SearchBoxSlice";
 import { GoArrowRight } from "react-icons/go";

@@ -4,7 +4,6 @@ import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 const StyledLink = styled(Link)`
-  margin-bottom: 30px;
   display: inline-flex;
   align-items: center;
   padding: 8px 27px;

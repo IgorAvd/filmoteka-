@@ -12,7 +12,6 @@ border-radius: 10px;
 
 export const TrendingImgTitleBox = styled.div`
 display:flex;
-// margin: 0 auto 25px;
 align-items: center;
 justify-content: center;
 `;
@@ -25,23 +24,20 @@ flex-direction: column;
 `;
 
 export const TrendingDetailsWrapperDescription = styled.div`
-// width: 800px;
 margin-top: 60px;
 
 span{
 display: block;
-// margin-top: 30px;
-// margin-bottom: 10px;
 text-align: justify;
 line-height: 1.5;
 font-size: 22px;
-// text-align: left;
 color: #ffffff;
 }
 
 strong{
    font-weight: bold; 
    font-size: 23px;
+   color: red;
 }
 `;
 
@@ -73,28 +69,28 @@ export const TrendingDetailsBtnBox = styled.div`
 `;
 
 export const TrendingDetailsBtnStyle = {
-   backgroundColor: "red",
-   height: "40px",
-   lineHeight: "40px",
-   fontWeight: "600",
-   fontSize: "12px",
-   whiteSpace: "nowrap",
-   overflow: "hidden",
-   textOverflow: "ellipsis",
-   borderRadius: "12px",
-   "&:hover": {
-      backgroundColor: "#ffffff",
-      color: "red",
-   }
+  backgroundColor: "red",
+  height: "40px",
+  lineHeight: "40px",
+  fontWeight: "600",
+  fontSize: "12px",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  borderRadius: "12px",
+  "&:hover": {
+    backgroundColor: "#ffffff",
+    color: "red",
+  }
 }
 
 export const TrendingDetailsVideoBox = {
-   display: "flex",
-   justifyContent: "center",
-   alignItems: "center",
-   marginTop: "40px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: "40px",
 }
-export const TrendingTrailerBox = styled.div`
+export const TrailerBox = styled.div`
 // position: relative;
 // top: 138px;
 display: flex;

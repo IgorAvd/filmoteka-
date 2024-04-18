@@ -6,7 +6,11 @@ import { useAppDispatch } from "../../hooks";
 import { FilterBoxStyles, FilterTextFieldStyles } from "./Filter.styled";
 import { getMovieBySearch } from "../../redux/SearchBox/operation";
 
-export const Filter: FC = () => {
+type FilterProp = {
+  title: string;
+};
+
+export const Filter: FC<FilterProp> = ({ title }) => {
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get("title") ?? "";
@@ -23,7 +27,8 @@ export const Filter: FC = () => {
   return (
     <Box sx={FilterBoxStyles}>
       <TextField
-        label="Find movie by name"
+        label={title}
+        // label="Find movie by name"
         type="text"
         name="name"
         variant="filled"

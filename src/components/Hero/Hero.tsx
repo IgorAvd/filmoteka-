@@ -18,6 +18,7 @@ import GroupImage from "../../images/Group.png";
 import Clock from "../../images/Vector.svg";
 import Star from "../../images/Star.svg";
 import Circle from "../../images/Circle.svg";
+import { Filter } from "../Filter/Filter";
 
 export const Hero = () => {
   const [showTrailer, setShowTrailer] = useState(false);
@@ -50,29 +51,19 @@ export const Hero = () => {
   };
 
   return (
-    // <StyledHeroSection ref={trailerRef}>
     <StyledHeroSection>
+      <Filter title={"Find movie by name"} />
       {showTrailer ? (
         <HeroTrailerBox>
           <iframe
             title="YouTube Video"
             style={{ width: "100%", height: "100%" }}
-            // width="800"
-            // height="500"
             src="https://www.youtube.com/embed/a8Gx8wiNbs8"
             allowFullScreen
           ></iframe>
         </HeroTrailerBox>
       ) : (
-        <Box
-        // sx={{
-        //   position: "relative",
-        //   top: "50%", // Положение по вертикали
-        //   left: "50%", // Положение по горизонтали
-        //   transform: "translate(-50%, -50%)", // Центрирование элемента точно по середине
-        //   zIndex: "10",
-        // }}
-        >
+        <Box>
           <Button
             onClick={handleShowTrailer}
             type="button"
@@ -132,10 +123,9 @@ export const Hero = () => {
       </HeroDescriptionBox>
       <HeroMainTextBox>
         <HeroMainTextStyle>
-          Set more than a decade after the events of the first film, learn the
-          story of the Sully family (Jake, Neytiri, and their kids), the trouble
-          that follows them, the lengths they go to keep each other safe, the
-          battles they fight to stay alive, and the tragedies they endure.
+          Once a familiar threat returns to finish what was previously started,
+          Jake must work with Neytiri and the army of the Na'vi race to protect
+          their home.
         </HeroMainTextStyle>
       </HeroMainTextBox>
     </StyledHeroSection>

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import heroImage from '../../images/hero.png';
 
 export const StyledHeroSection = styled.section`
+position: relative;
 display: flex;
 flex-direction: column;
 justify-content: end; 
@@ -125,7 +126,6 @@ font-size: 17px;
 `;
 
 export const HeroMainTextBox = styled.div`
-//  width: 770px;
 font-family: Roboto, sans-serif;
 display: block;
 text-align: justify;

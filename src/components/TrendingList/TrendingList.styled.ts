@@ -6,6 +6,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 gap: 16px;
 margin-top:30px;
+padding-bottom:30px;
 
 img {  
   border-radius:10px;   

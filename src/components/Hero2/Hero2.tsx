@@ -18,6 +18,7 @@ import GroupImage from "../../images/Group.png";
 import Clock from "../../images/Vector.svg";
 import Star from "../../images/Star.svg";
 import Circle from "../../images/Circle.svg";
+import { Filter } from "../Filter/Filter";
 
 export const Hero2 = () => {
   const [showTrailer, setShowTrailer] = useState(false);
@@ -50,8 +51,8 @@ export const Hero2 = () => {
   };
 
   return (
-    // <StyledHeroSection ref={trailerRef}>
     <StyledHeroSection>
+      <Filter title={"Find movie by name"} />
       {showTrailer ? (
         <HeroTrailerBox>
           <iframe

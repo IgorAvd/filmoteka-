@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   TrendingItemContainer,
   TrendingItemTitleMovie,
-  TrendingLi,
+  TrendingListItem,
   buttonStyles,
 } from "./TrendingItem.styled";
 import { Button } from "@mui/material";
@@ -19,7 +19,7 @@ type TrendingItemProp = {
 
 export const TrendingItem: FC<TrendingItemProp> = ({ movie }) => {
   return (
-    <TrendingLi key={movie.id}>
+    <TrendingListItem key={movie.id}>
       <img
         src={
           movie.poster_path
@@ -40,6 +40,6 @@ export const TrendingItem: FC<TrendingItemProp> = ({ movie }) => {
           More
         </Button>
       </TrendingItemContainer>
-    </TrendingLi>
+    </TrendingListItem>
   );
 };

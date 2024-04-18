@@ -23,6 +23,19 @@ export function getTrailer(id: string) {
     return axios.get(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`);
 }
 
-// export function getMovieBySearch(name: string) {
-//     return axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${name}`);
-// }
+export function getTv() {
+    return axios.get(`${BASE_URL}/trending/tv/day?api_key=${API_KEY}`);
+}
+
+export function getTvById(seriesId: string) {
+    return axios.get(`${BASE_URL}/tv/${seriesId}?api_key=${API_KEY}`);
+}
+
+export function getTvVideoById(seriesId: string) {
+    return axios.get(`${BASE_URL}/tv/${seriesId}/videos?api_key=${API_KEY}`);
+}
+
+export function getTvVideoBySearch(title: string) {
+    return axios.get(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${title}`);
+}
+

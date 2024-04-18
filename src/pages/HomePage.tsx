@@ -1,13 +1,12 @@
-import { Typography } from "@mui/material";
-import { Hero } from "../components/Hero/Hero";
 import { Trending } from "../components/Trending/Trending";
 import Slider from "../components/Slider";
+import { Filter } from "../components/Filter/Filter";
 
 const HomePage = () => {
   return (
     <main>
-      {/* <Hero /> */}
       <Slider />
+      {/* <Filter /> */}
       <Trending />
     </main>
   );

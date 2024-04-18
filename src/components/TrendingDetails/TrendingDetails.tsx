@@ -7,13 +7,12 @@ import {
   TrendingDetailsBtnStyle,
   TrendingDetailsContainer,
   TrendingDetailsTitle,
-  TrendingDetailsVideoBox,
   TrendingDetailsWrapper,
   TrendingDetailsWrapperDescription,
   TrendingImgTitleBox,
-  TrendingTrailerBox,
+  TrailerBox,
 } from "./TrendingDetails.styled";
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 
 type MovieDetails = {
   release_date?: string;
@@ -149,27 +148,14 @@ const TrendingDetails = () => {
       </TrendingDetailsBtnBox>
 
       {videoKey && (
-        // <Box sx={TrendingDetailsVideoBox}>
-        //   <iframe
-        //     width="800"
-        //     height="500"
-        //     src={`https://www.youtube.com/embed/${videoKey}`}
-        //     title="Movie Trailer"
-        //     allow="fullscreen"
-        //     allowFullScreen
-        //     style={{ position: "absolute", top: "122px" }}
-        //   ></iframe>
-        // </Box>
-        <TrendingTrailerBox>
-          {/* <Box sx={TrendingDetailsVideoBox}> */}
+        <TrailerBox>
           <iframe
             src={`https://www.youtube.com/embed/${videoKey}`}
             title="Movie Trailer"
             allowFullScreen
             style={{ width: "100%", height: "100%" }}
           ></iframe>
-          {/* </Box> */}
-        </TrendingTrailerBox>
+        </TrailerBox>
       )}
 
       <Suspense fallback={<div>Loading page...</div>}>

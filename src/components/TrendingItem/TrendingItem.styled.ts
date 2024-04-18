@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
 
 
-export const TrendingLi = styled.li`
+export const TrendingListItem = styled.li`
 display: block;
 text-align: center;
 margin: 0 auto;  
 img {
   height:375px; 
+  &:hover,
+   &:focus {   
+     border-radius: 10px;
+     box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
+             1px 2px 4px 0px rgba(0,255,255,0.7),
+             2px 4px 8px 0px rgba(0,255,255,0.7),
+             2px 4px 16px 0px rgba(0,255,255,0.7);
+     
+   }
 }
 `;
 

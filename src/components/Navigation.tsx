@@ -7,14 +7,14 @@ export const Navigation = () => {
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
         <div style={{ display: "flex", gap: "16px" }}>
           <NavLink to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            Home
+            Movies
           </NavLink>
 
           <NavLink
-            to="/movies"
+            to="/tv-shows"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            Movies
+            Serials
           </NavLink>
         </div>
       </Typography>
