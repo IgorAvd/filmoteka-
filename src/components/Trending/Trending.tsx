@@ -22,7 +22,7 @@ export const Trending = () => {
   const [data, setData] = useState<Movie[]>([]);
   const [showAllMovies, setShowAllMovies] = useState(false);
   const searchBoxValue = useAppSelector(selectSearchBoxValue);
-
+  console.log("data", data);
   useEffect(() => {
     getAllMovie()
       .then((response) => {

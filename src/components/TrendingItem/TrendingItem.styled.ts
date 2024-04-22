@@ -8,7 +8,8 @@ margin: 0 auto;
 img {
   height:375px; 
   &:hover,
-   &:focus {   
+   &:focus {  
+    cursor: pointer; 
      border-radius: 10px;
      box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
              1px 2px 4px 0px rgba(0,255,255,0.7),
@@ -58,3 +59,5 @@ export const buttonStyles = {
     color: "red",
   },
 };
+
+

@@ -32,6 +32,9 @@ export const TrendingBoxBtn = {
   "&:hover": {
     color: "orangered",
   },
-}
+  '@media (max-width: 550px)': {
+    lineHeight: "1.15",
+    padding: "0"
 
-
+  }
+};

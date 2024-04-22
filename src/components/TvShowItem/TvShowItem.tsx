@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import {
   TrendingItemContainer,
   TrendingItemTitleMovie,
-  TrendingListItem,
   buttonStyles,
 } from "../TrendingItem/TrendingItem.styled";
 import { Button } from "@mui/material";
