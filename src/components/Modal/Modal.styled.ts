@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+
 export const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -8,6 +9,7 @@ export const modalStyle = {
     overflowY: "auto",
     maxHeight: "500px",
     bgcolor: "background.paper",
+    width: "450px",
     borderRadius: "10px",
     boxShadow: "0px 1px 2px rgba(0, 255, 255, 0.7), 1px 2px 4px rgba(0, 255, 255, 0.7), 2px 4px 8px rgba(0, 255, 255, 0.7), 2px 4px 16px rgba(0, 255, 255, 0.7)",
     p: 4,
@@ -18,7 +20,7 @@ export const modalStyle = {
     img: {
         borderRadius: "10px",
     },
-    "@media (max-width: 560px)": {
+    "@media (max-width: 580px)": {
         width: "280px",
     },
     "@media (max-width: 360px)": {
@@ -31,7 +33,8 @@ export const modalImgDescriptionBox = {
     marginTop: "15px",
     gap: "10px",
     marginBottom: "15px",
-    "@media (max-width: 1020px)": {
+    // width: "450px",
+    "@media (max-width: 580px)": {
         flexDirection: "column",
     }
 };
@@ -73,3 +76,16 @@ export const ModalTextStyle = {
         fontSize: "18px",
     }
 };
+
+export const IconStyle = {
+    display: "none",
+    "@media (max-width: 580px)": {
+        display: "block",
+        position: "absolute",
+        top: "485px",
+        right: "-5px",
+
+    }
+};
+
+
