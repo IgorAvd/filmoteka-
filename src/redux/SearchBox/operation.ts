@@ -17,7 +17,20 @@ export const getMovieBySearch = createAsyncThunk(
         }
     }
 );
-
+export const getTvVideoBySearch = createAsyncThunk(
+    'search/getTvVideoBySearch',
+    async (title: string, thunkAPI) => {
+        try {
+            const response = await axios.get(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${title}`);
+            return response.data.results;
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);
+// export function getTvVideoBySearch(title: string) {
+//     return axios.get(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${title}`);
+// }
 // export const getMovieBySearch = createAsyncThunk(
 //     'search/getMovieBySearch',
 //     async (name: string, { rejectWithValue, dispatch }) => {

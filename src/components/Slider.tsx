@@ -1,14 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Splide from "@splidejs/splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Hero } from "./Hero/Hero";
-import { Trending } from "./Trending/Trending";
 import { Hero2 } from "./Hero2/Hero2";
 
 const Slider = () => {
   const splideRef = useRef<HTMLDivElement>(null);
 
-  // Объекты стилей
   const sliderProgressStyle = {
     background: "#ccc",
   };
@@ -16,7 +14,6 @@ const Slider = () => {
   const sliderProgressBarStyle = {
     background: "#FF0000",
     height: "5px",
-    // transition: "width 400ms ease",
     width: "0",
   };
 

@@ -50,23 +50,18 @@ export const modalTitleStyle = {
     textAlign: "center",
     fontSize: "25px",
     color: "red",
-    // lineHeight: "1.2",
-    // "@media (max-width: 1000px)": {
-    //     fontSize: "18px",
-    // }
 };
 
 export const ModalTitleStyle = styled.span`
 color: red;
-// line-height: 1.2;
 @media (max-width: 1150px) {
-        font-size: 20px;
+        font-size: 19px;
     }
 `;
 
 export const ModalTextStyle = {
     textAlign: "justify",
-    fontSize: "25px",
+    fontSize: "19px",
     lineHeight: "1.2",
     // textAlign: "justify,
     "@media (max-width: 1150px)": {
@@ -84,7 +79,8 @@ export const IconStyle = {
         position: "absolute",
         top: "485px",
         right: "-5px",
-
+        width: "35px",
+        height: "45px"
     }
 };
 

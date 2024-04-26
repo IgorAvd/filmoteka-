@@ -12,6 +12,9 @@ import {
   TvShowOverview,
   TvShowTitle,
 } from "./TvShowsDetails.styled";
+import ScrollToTop from "react-scroll-to-top";
+import { ScrollStyle, TrendingBoxBtn } from "../Trending/Trending.styled";
+import { FiNavigation2 } from "react-icons/fi";
 
 type MovieDetails = {
   name?: string;
@@ -81,7 +84,9 @@ export const TvShowsDetails = () => {
   return (
     <>
       <TvShowBox>
-        <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
+        <TrendingBoxBtn>
+          <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
+        </TrendingBoxBtn>
         <TvShowImgTitleBox>
           <img
             src={
@@ -116,6 +121,19 @@ export const TvShowsDetails = () => {
             ></iframe>
           </TrailerBox>
         )}
+        <ScrollToTop
+          style={ScrollStyle}
+          component={
+            <FiNavigation2
+              style={{
+                height: "20px",
+                width: "20px",
+                color: "aqua",
+              }}
+            />
+          }
+          smooth
+        />
       </TvShowBox>
     </>
   );

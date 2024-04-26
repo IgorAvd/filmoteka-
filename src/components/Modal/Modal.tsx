@@ -14,10 +14,11 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 type CustomModalProps = {
   open: boolean;
   handleClose: () => void;
-  poster: string;
-  title: string;
+  poster?: string;
+  title?: string;
   release?: string;
   overview?: string;
+  name?: string;
 };
 
 export const CustomModal: FC<CustomModalProps> = ({
@@ -27,6 +28,7 @@ export const CustomModal: FC<CustomModalProps> = ({
   title,
   release,
   overview,
+  name,
 }) => {
   return (
     <Modal
@@ -43,7 +45,7 @@ export const CustomModal: FC<CustomModalProps> = ({
                 ? `https://image.tmdb.org/t/p/w200${poster}`
                 : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2aL_HlffoXMrgiodMTTldQmRpCJIJ9T6jOLN9hmm_kQ&s"
             }
-            alt={title}
+            alt={title || name}
           />
           <Box sx={ModalTitleReleseWrapper}>
             <Typography
@@ -54,15 +56,26 @@ export const CustomModal: FC<CustomModalProps> = ({
             >
               {title}
             </Typography>
-
+            <Typography
+              id="modal-modal-title"
+              sx={modalTitleStyle}
+              variant="h6"
+              component="h2"
+            >
+              {name}
+            </Typography>
             <Typography
               id="modal-modal-title"
               sx={ModalTextStyle}
               variant="h6"
               component="h2"
             >
-              <ModalTitleStyle>Release date: </ModalTitleStyle>
-              {release}
+              {release && (
+                <>
+                  <ModalTitleStyle>Release date: </ModalTitleStyle>
+                  {release}
+                </>
+              )}
             </Typography>
           </Box>
         </Box>
@@ -74,9 +87,7 @@ export const CustomModal: FC<CustomModalProps> = ({
         >
           <ModalTitleStyle>Overview: </ModalTitleStyle> {overview}
         </Typography>
-        <Box sx={IconStyle}>
-          <KeyboardDoubleArrowDownIcon />
-        </Box>
+        {/* <KeyboardDoubleArrowDownIcon sx={IconStyle} /> */}
       </Box>
     </Modal>
   );

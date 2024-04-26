@@ -13,6 +13,13 @@ import {
   TrailerBox,
 } from "./TrendingDetails.styled";
 import { Button } from "@mui/material";
+import ScrollToTop from "react-scroll-to-top";
+import {
+  ScrollStyle,
+  TrendingBox,
+  TrendingBoxBtn,
+} from "../Trending/Trending.styled";
+import { FiNavigation2 } from "react-icons/fi";
 
 type MovieDetails = {
   release_date?: string;
@@ -88,7 +95,9 @@ const TrendingDetails = () => {
   };
   return (
     <TrendingDetailsContainer>
-      <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
+      <TrendingBoxBtn>
+        <BackLink to={backLinkLocationRef.current}>Go back</BackLink>
+      </TrendingBoxBtn>
       <TrendingDetailsWrapper>
         <TrendingImgTitleBox>
           <img
@@ -161,6 +170,19 @@ const TrendingDetails = () => {
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
+      <ScrollToTop
+        style={ScrollStyle}
+        component={
+          <FiNavigation2
+            style={{
+              height: "20px",
+              width: "20px",
+              color: "aqua",
+            }}
+          />
+        }
+        smooth
+      />
     </TrendingDetailsContainer>
   );
 };

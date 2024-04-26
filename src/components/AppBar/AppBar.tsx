@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Navigation } from "../Navigation";
+import { Navigation } from "../Navigation/Navigation";
 import { Filter } from "../Filter/Filter";
 
 import { ToolBarStyles } from "./AppBar.styled";

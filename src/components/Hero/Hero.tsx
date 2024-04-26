@@ -19,10 +19,10 @@ import Clock from "../../images/Vector.svg";
 import Star from "../../images/Star.svg";
 import Circle from "../../images/Circle.svg";
 import { Filter } from "../Filter/Filter";
+import { getMovieBySearch } from "../../redux/SearchBox/operation";
 
 export const Hero = () => {
   const [showTrailer, setShowTrailer] = useState(false);
-  // const trailerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleCloseTrailer = (event: MouseEvent) => {
@@ -52,7 +52,7 @@ export const Hero = () => {
 
   return (
     <StyledHeroSection>
-      <Filter title={"Find movie by name"} />
+      <Filter title={"Find movie by name"} onSubmit={getMovieBySearch} />
       {showTrailer ? (
         <HeroTrailerBox>
           <iframe

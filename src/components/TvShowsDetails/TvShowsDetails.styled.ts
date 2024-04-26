@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export const TvShowBox = styled.div`
 padding: 0 25px 25px; 
-margin-top: 80px;
+margin-top: 82px;
 img{
 width: 290px;
 border-radius: 10px;}
@@ -36,6 +36,7 @@ font-size: 28px;
 export const TvShowBtnStyle = {
   backgroundColor: "red",
   height: "40px",
+  width: "90px",
   lineHeight: "40px",
   fontWeight: "600",
   fontSize: "12px",
@@ -99,7 +100,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 gap: 16px;
 padding-top:190px;
-padding-bottom:30px;
+padding-bottom:50px;
 
 img {  
   border-radius:10px;   
