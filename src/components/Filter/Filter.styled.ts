@@ -2,7 +2,7 @@ export const FilterBoxStyles = {
     position: "absolute",
     left: "50%",
     transform: "translateX(-50%)",
-    top: "150px",
+    top: "120px",
     display: "flex",
     justifyContent: "center",
     margin: "0 auto",

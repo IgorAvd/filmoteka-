@@ -42,7 +42,7 @@ export const Filter: FC<FilterProp> = ({ title, onSubmit }) => {
                 aria-label="search"
                 onClick={handleFilterSubmit}
               >
-                <SearchIcon />
+                <SearchIcon sx={{ padding: "20px" }} />
               </IconButton>
             </InputAdornment>
           ),
