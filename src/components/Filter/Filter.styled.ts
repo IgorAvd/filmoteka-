@@ -6,7 +6,7 @@ export const FilterBoxStyles = {
     display: "flex",
     justifyContent: "center",
     margin: "0 auto",
-    width: "530px",
+    maxWidth: "530px",
 };
 
 export const FilterTextFieldStyles = {

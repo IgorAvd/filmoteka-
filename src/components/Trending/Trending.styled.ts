@@ -70,6 +70,10 @@ export const PaginationStyle = {
   justifyContent: "center",
   "& .MuiPaginationItem-root": {
     color: "rgba(0, 255, 255, 0.7)",
+    "@media(max-width: 500px)": {
+      minWidth: "28px",
+      height: "28px",
+    }
   },
   "& .MuiPaginationItem-page.Mui-selected": {
     backgroundColor: "rgba(0, 255, 255, 0.7)",
