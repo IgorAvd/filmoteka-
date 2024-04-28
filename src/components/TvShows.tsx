@@ -9,13 +9,11 @@ import Stack from "@mui/material/Stack";
 import { FiNavigation2 } from "react-icons/fi";
 import {
   PaginationStyle,
-  ScrollStyle,
-  TrendingContainer,
+  ScrollStyle, 
 } from "./Trending/Trending.styled";
 import { getTvVideoBySearch } from "../redux/SearchBox/operation";
 import { useAppSelector } from "../hooks";
-import {
-  selectSearchBoxValue,
+import { 
   selectSearchTvValue,
 } from "../redux/SearchBox/SearchBoxSlice";
 interface TvShow {
@@ -23,16 +21,12 @@ interface TvShow {
   title: string;
   poster_path: string;
 }
+
 export const TvShows = () => {
-  const [data, setData] = useState<TvShow[]>([]);
-  const searchBoxValue = useAppSelector(selectSearchBoxValue);
+  const [data, setData] = useState<TvShow[]>([]); 
   const searchTvValue = useAppSelector(selectSearchTvValue);
 
   console.log("searchTvValue", searchTvValue);
-
-  // if (searchBoxValue !== "") {
-  //   setData(searchBoxValue);
-  // }
 
   useEffect(() => {
     if (searchTvValue.length > 0) {

@@ -13,7 +13,6 @@ export const FilterTextFieldStyles = {
     width: "530px",
     borderRadius: "10px",
     backgroundColor: "#ffffff",
-    // zIndex: "1000000",
     '@media (max-width: 550px)': {
         width: "330px",
     }

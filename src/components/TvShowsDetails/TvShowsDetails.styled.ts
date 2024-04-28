@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const TvShowBox = styled.div`
 padding: 0 25px 25px; 
 margin-top: 82px;

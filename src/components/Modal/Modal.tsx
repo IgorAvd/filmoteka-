@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Box, Modal, Typography } from "@mui/material";
 import {
-  IconStyle,
   ModalTextStyle,
   ModalTitleReleseWrapper,
   ModalTitleStyle,
@@ -9,7 +8,6 @@ import {
   modalStyle,
   modalTitleStyle,
 } from "./Modal.styled";
-import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 type CustomModalProps = {
   open: boolean;
@@ -87,7 +85,6 @@ export const CustomModal: FC<CustomModalProps> = ({
         >
           <ModalTitleStyle>Overview: </ModalTitleStyle> {overview}
         </Typography>
-        {/* <KeyboardDoubleArrowDownIcon sx={IconStyle} /> */}
       </Box>
     </Modal>
   );

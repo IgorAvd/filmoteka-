@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieReviews } from "../../services/api";
-import { Typography } from "@mui/material";
 import { ReviewBox } from "./Reviews.styled";
 
 interface Review {

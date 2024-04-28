@@ -14,11 +14,7 @@ import {
 } from "./TrendingDetails.styled";
 import { Button } from "@mui/material";
 import ScrollToTop from "react-scroll-to-top";
-import {
-  ScrollStyle,
-  TrendingBox,
-  TrendingBoxBtn,
-} from "../Trending/Trending.styled";
+import { ScrollStyle, TrendingBoxBtn } from "../Trending/Trending.styled";
 import { FiNavigation2 } from "react-icons/fi";
 
 type MovieDetails = {

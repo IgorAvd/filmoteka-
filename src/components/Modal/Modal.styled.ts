@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -32,8 +31,7 @@ export const modalImgDescriptionBox = {
     display: "flex",
     marginTop: "15px",
     gap: "10px",
-    marginBottom: "15px",
-    // width: "450px",
+    marginBottom: "15px",   
     "@media (max-width: 580px)": {
         flexDirection: "column",
     }
@@ -62,8 +60,7 @@ color: red;
 export const ModalTextStyle = {
     textAlign: "justify",
     fontSize: "19px",
-    lineHeight: "1.2",
-    // textAlign: "justify,
+    lineHeight: "1.2",    
     "@media (max-width: 1150px)": {
         fontSize: "20px",
     },

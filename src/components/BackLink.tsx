@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
-import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { PiArrowFatLeft } from "react-icons/pi";
 

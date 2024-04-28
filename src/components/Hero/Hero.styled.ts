@@ -59,8 +59,6 @@ export const HeroBtnStyle = {
   height: "60px",
   backgroundColor: "#FF0000",
   color: "#FFFFFF",
-  // marginTop: "350px",
-
   textAlign: "center",
   justifyContent: "center",
 

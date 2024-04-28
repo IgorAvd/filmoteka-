@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const TrendingListItem = styled.li`
 display: block;
 text-align: center;

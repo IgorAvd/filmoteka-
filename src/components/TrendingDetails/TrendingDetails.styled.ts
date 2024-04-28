@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
-
 export const TrendingDetailsContainer = styled.div`
-
 padding: 0 25px 25px; 
 margin-top: 100px;
 img{
@@ -16,7 +14,6 @@ align-items: center;
 justify-content: center;
 `;
 
-
 export const TrendingDetailsWrapper = styled.div`
 display:flex;
 margin-bottom: 50px; 
@@ -25,7 +22,6 @@ flex-direction: column;
 
 export const TrendingDetailsWrapperDescription = styled.div`
 margin-top: 60px;
-
 span{
 display: block;
 text-align: justify;

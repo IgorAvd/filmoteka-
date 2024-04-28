@@ -43,7 +43,5 @@ export function getTvVideoById(seriesId: string) {
     return axios.get(`${BASE_URL}/tv/${seriesId}/videos?api_key=${API_KEY}`);
 }
 
-// export function getTvVideoBySearch(title: string) {
-//     return axios.get(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${title}`);
-// }
+
 

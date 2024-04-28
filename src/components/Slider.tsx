@@ -51,10 +51,9 @@ const Slider = () => {
           <li className="splide__slide">
             <Hero />
           </li>
-          {/* <li className="splide__slide">
+          <li className="splide__slide">
             <Hero2 />
-          </li> */}
-          {/* <li className="splide__slide">Slide 03</li> */}
+          </li>
         </ul>
       </div>
       <div className="my-slider-progress" style={sliderProgressStyle}>
@@ -68,29 +67,3 @@ const Slider = () => {
 };
 
 export default Slider;
-
-// import ReactFullpage from "@fullpage/react-fullpage";
-// import { Hero } from "./Hero/Hero";
-// import { Trending } from "./Trending/Trending";
-
-// const Slider = () => {
-//   return (
-//     <ReactFullpage
-//       render={({ state, fullpageApi }) => {
-//         return (
-//           <ReactFullpage.Wrapper>
-//             <div className="section">
-//               <Hero />
-//             </div>
-//             <div className="section">
-//               <Trending />
-//             </div>
-//           </ReactFullpage.Wrapper>
-//         );
-//       }}
-//       credits={{ enabled: false, label: "" }}
-//     />
-//   );
-// };
-
-// export default Slider;

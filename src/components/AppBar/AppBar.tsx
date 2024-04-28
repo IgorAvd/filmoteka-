@@ -3,8 +3,6 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Navigation } from "../Navigation/Navigation";
-import { Filter } from "../Filter/Filter";
-
 import { ToolBarStyles } from "./AppBar.styled";
 
 export const AppBarComponent: React.FC = () => {
@@ -13,8 +11,7 @@ export const AppBarComponent: React.FC = () => {
       <Toolbar sx={ToolBarStyles} style={{ height: "95px" }}>
         <Typography variant="h6" component="div">
           <Navigation />
-        </Typography>
-        {/* <Filter /> */}
+        </Typography>        
       </Toolbar>
     </AppBar>
   );

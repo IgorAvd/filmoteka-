@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   HeroBtnStyle,
   HeroBtnText,
@@ -23,7 +23,6 @@ import { getMovieBySearch } from "../../redux/SearchBox/operation";
 
 export const Hero2 = () => {
   const [showTrailer, setShowTrailer] = useState(false);
-  // const trailerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleCloseTrailer = (event: MouseEvent) => {

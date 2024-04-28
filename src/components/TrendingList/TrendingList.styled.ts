@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const TrendingUl = styled.ul`
 display: grid;
 grid-template-columns: repeat(4, 1fr);

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const CastList = styled.ul`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -18,12 +17,11 @@ export const CastListItem = styled.li`
 display: block;
 text-align: center;
 margin: 0 auto;
-  img{
-    height: 435px;
-     @media (max-width: 670px) {    
-width:320px;
-  }
-  }
+img{
+  height: 435px;
+  @media (max-width: 670px) {    
+  width:320px;
+  }  
 `;
 
 export const CastDescription = styled.div`
