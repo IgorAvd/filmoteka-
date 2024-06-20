@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Checkbox } from '@mui/material';
 
 export const TrendingListItem = styled.li`
 display: block;
@@ -56,4 +57,15 @@ export const buttonStyles = {
   },
 };
 
+export const ImageContainer = styled.div`
+  position: relative;
+  width: fit-content;
+  margin-bottom: 16px;
+`;
 
+export const StyledCheckbox = styled(Checkbox)`
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: red;
+`;

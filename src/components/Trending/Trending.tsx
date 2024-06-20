@@ -21,13 +21,15 @@ export type Movie = {
   id: number;
   title: string;
   poster_path: string;
+  media_type: string;
 };
 
 export const Trending = () => {
   const [data, setData] = useState<Movie[]>([]);
   const [showAllMovies, setShowAllMovies] = useState(false);
   const searchBoxValue = useAppSelector(selectSearchBoxValue);
-  console.log("searchBoxValue123", searchBoxValue);
+
+
   useEffect(() => {
     getAllMovie()
       .then((response) => {
@@ -45,8 +47,7 @@ export const Trending = () => {
   const handlePaginationClick = (page: number) => {
     getAllMovieByPage(page).then((response) => {
       setData(response.data.results);
-    });
-    console.log("page", page);
+    });   
   };
 
   return (
@@ -73,6 +74,7 @@ export const Trending = () => {
             ? data
             : data.slice(0, 4)
         }
+        
       />
       <ScrollToTop
         style={ScrollStyle}
@@ -101,3 +103,4 @@ export const Trending = () => {
     </TrendingContainer>
   );
 };
+

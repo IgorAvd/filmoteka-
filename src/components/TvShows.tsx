@@ -16,18 +16,24 @@ import { useAppSelector } from "../hooks";
 import { 
   selectSearchTvValue,
 } from "../redux/SearchBox/SearchBoxSlice";
-interface TvShow {
+import { Movie } from "./Trending/Trending";
+export interface TvShow {
   id: number;
-  title: string;
+  title?: string;
+  name?: string;
   poster_path: string;
+  overview?: string;
+  media_type?: string;
 }
 
 export const TvShows = () => {
   const [data, setData] = useState<TvShow[]>([]); 
   const searchTvValue = useAppSelector(selectSearchTvValue);
-
-  console.log("searchTvValue", searchTvValue);
-
+const [selectedFilms, setSelectedFilms] = useState<TvShow[]>(() => {
+  const storedSelectedFilms = localStorage.getItem("selectedFilms");
+  return storedSelectedFilms ? JSON.parse(storedSelectedFilms) : [];
+});
+  console.log('data', data)
   useEffect(() => {
     if (searchTvValue.length > 0) {
       setData(searchTvValue);
@@ -42,31 +48,71 @@ export const TvShows = () => {
     }
   }, [searchTvValue]);
 
+   useEffect(() => {
+     const storedSelectedFilms = localStorage.getItem("selectedFilms");
+     if (storedSelectedFilms) {
+       setSelectedFilms(JSON.parse(storedSelectedFilms));
+     }
+   }, []);
+
+   useEffect(() => {
+     localStorage.setItem("selectedFilms", JSON.stringify(selectedFilms));
+   }, [selectedFilms]);
+
   const handlePaginationClick = (page: number) => {
     getTvByPage(page).then((response) => {
       setData(response.data.results);
     });
   };
-
+//  const handleToggleFavorite = (tvShow: TvShow) => {
+//    setSelectedFilms((prevSelectedFilms) => {
+//      if (prevSelectedFilms.some((film) => film.id === tvShow.id)) {
+//        return prevSelectedFilms.filter((film) => film.id !== tvShow.id);
+//      } else {
+//        const movie: Movie = {
+//          id: tvShow.id,
+//          title: tvShow.title || tvShow.name || "",
+//          poster_path: tvShow.poster_path,
+//        };
+//        return [...prevSelectedFilms, movie];
+//      }
+//    });
+//  };
+ const handleToggleFavorite = (tvShow: TvShow) => {
+   setSelectedFilms((prevSelectedFilms) => {
+     if (prevSelectedFilms.some((film) => film.id === tvShow.id)) {
+       return prevSelectedFilms.filter((film) => film.id !== tvShow.id);
+     } else {
+       return [...prevSelectedFilms, tvShow];
+     }
+   });
+ };
   return (
-    <TvShowList>
-      <Filter title={"Find serials by name"} onSubmit={getTvVideoBySearch} />
-      {data?.map((tvShow) => (
-        <TvShowItem key={tvShow.id} tvShow={tvShow} />
-      ))}
-      <ScrollToTop
-        style={ScrollStyle}
-        component={
-          <FiNavigation2
-            style={{
-              height: "20px",
-              width: "20px",
-              color: "aqua",
-            }}
+    <>
+      <TvShowList>
+        <Filter title={"Find serials by name"} onSubmit={getTvVideoBySearch} />
+        {data?.map((tvShow) => (         
+          <TvShowItem
+            key={tvShow.id}
+            tvShow={tvShow}
+            onToggleFavorite={handleToggleFavorite}
+            selectedFilms={selectedFilms}
           />
-        }
-        smooth
-      />
+        ))}
+        <ScrollToTop
+          style={ScrollStyle}
+          component={
+            <FiNavigation2
+              style={{
+                height: "20px",
+                width: "20px",
+                color: "aqua",
+              }}
+            />
+          }
+          smooth
+        />
+      </TvShowList>
       <Stack spacing={2}>
         <Pagination
           onChange={(event: React.ChangeEvent<unknown>, page: number) =>
@@ -78,6 +124,6 @@ export const TvShows = () => {
           shape="rounded"
         />
       </Stack>
-    </TvShowList>
+    </>
   );
 };

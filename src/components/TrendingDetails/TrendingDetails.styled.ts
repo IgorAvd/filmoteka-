@@ -57,6 +57,7 @@ export const TrendingDetailsBtnBox = styled.div`
  display: flex;
   width: 290px;
   justify-content: space-between;
+  margin-bottom: 20px;
 `;
 
 export const TrendingDetailsBtnStyle = {

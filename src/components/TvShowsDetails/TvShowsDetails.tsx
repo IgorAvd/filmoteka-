@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { BackLink } from "../BackLink";
 import { getTvById, getTvVideoById } from "../../services/api";
 import { Button } from "@mui/material";
@@ -15,6 +15,7 @@ import {
 import ScrollToTop from "react-scroll-to-top";
 import { ScrollStyle, TrendingBoxBtn } from "../Trending/Trending.styled";
 import { FiNavigation2 } from "react-icons/fi";
+import { TrendingDetailsBtnBox, TrendingDetailsBtnStyle } from "../TrendingDetails/TrendingDetails.styled";
 
 type MovieDetails = {
   name?: string;
@@ -26,14 +27,13 @@ export const TvShowsDetails = () => {
   const [TvShowDetails, setTvShowDetails] = useState<MovieDetails>({});
   const [videoKey, setVideoKey] = useState<string | null>(null);
   const { tvShowId } = useParams<{ tvShowId: string }>();
-  const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? "/");
-  console.log("TvShowDetails", TvShowDetails);
+  const location = useLocation();   
+  const backLinkLocationRef = useRef(location.state?.from ?? "/");  
+  
   useEffect(() => {
     if (tvShowId) {
       getTvById(tvShowId)
-        .then((response) => {
-          console.log("response", response);
+        .then((response) => {          
           setTvShowDetails(response.data);
         })
         .catch((error) => {
@@ -48,16 +48,13 @@ export const TvShowsDetails = () => {
         setVideoKey(null);
       }
     };
-
     const handleOutsideClick = (event: MouseEvent) => {
       if (event.target !== event.currentTarget) {
         setVideoKey(null);
       }
     };
-
     document.addEventListener("keydown", handleEscapeKeyPress);
     document.addEventListener("mousedown", handleOutsideClick);
-
     return () => {
       document.removeEventListener("keydown", handleEscapeKeyPress);
       document.removeEventListener("mousedown", handleOutsideClick);
@@ -68,8 +65,7 @@ export const TvShowsDetails = () => {
     try {
       if (tvShowId) {
         const response = await getTvVideoById(tvShowId);
-        const results = response.data.results;
-        console.log("response", response);
+        const results = response.data.results;       
         if (results.length > 0) {
           const key = results[0].key;
           setVideoKey(key);
@@ -111,6 +107,31 @@ export const TvShowsDetails = () => {
           <strong>Overview: </strong>
           {TvShowDetails.overview}
         </TvShowOverview>
+        <TrendingDetailsBtnBox>
+          <Button
+            component={Link}
+            to={`/tv-shows/${tvShowId}/cast`}
+            variant="contained"
+            sx={TrendingDetailsBtnStyle}
+          >
+            Cast
+          </Button>
+          <Button
+            component={Link}
+            to={`/tv-shows/${tvShowId}/reviews`}
+            variant="contained"
+            sx={TrendingDetailsBtnStyle}
+          >
+            Reviews
+          </Button>
+          <Button
+            onClick={handleButtonClick}
+            variant="contained"
+            sx={TrendingDetailsBtnStyle}
+          >
+            Trailer
+          </Button>
+        </TrendingDetailsBtnBox>
         {videoKey && (
           <TrailerBox>
             <iframe
@@ -121,6 +142,9 @@ export const TvShowsDetails = () => {
             ></iframe>
           </TrailerBox>
         )}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
         <ScrollToTop
           style={ScrollStyle}
           component={

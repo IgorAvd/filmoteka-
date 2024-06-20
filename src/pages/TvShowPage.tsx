@@ -1,6 +1,7 @@
 import { TvShows } from "../components/TvShows";
 
 const TvShowPage = () => {
+ 
   return (
     <main>
       <TvShows />

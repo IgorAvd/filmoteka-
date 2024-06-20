@@ -76,6 +76,7 @@ margin: 60px auto 0;
 export const TvShowOverview = styled.span`
 display: block;
 margin-top: 60px;
+margin-bottom: 50px;
 text-align: justify;
 line-height: 1.5;
 font-size: 22px;

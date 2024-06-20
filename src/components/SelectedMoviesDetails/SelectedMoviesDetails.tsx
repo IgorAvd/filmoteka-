@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { getMovieDetails, getTrailer } from "../../services/api";
+import { getMovieDetails, getTrailer, getTvById } from "../../services/api";
 import { BackLink } from "../BackLink";
 import {
   TrendingDetailsBtnBox,
@@ -11,7 +11,7 @@ import {
   TrendingDetailsWrapperDescription,
   TrendingImgTitleBox,
   TrailerBox,
-} from "./TrendingDetails.styled";
+} from "../TrendingDetails/TrendingDetails.styled";
 import { Button } from "@mui/material";
 import ScrollToTop from "react-scroll-to-top";
 import { ScrollStyle, TrendingBoxBtn } from "../Trending/Trending.styled";
@@ -19,63 +19,79 @@ import { FiNavigation2 } from "react-icons/fi";
 
 type MovieDetails = {
   release_date?: string;
+  first_air_date?: string;
   poster_path?: string;
   original_title?: string;
+  original_name?: string;
   vote_average?: number;
   overview?: string;
   genres?: { name: string }[];
 };
 
-const TrendingDetails = () => {
+const SelectedMoviesDetails = () => {
   const [trendingDetails, setTrendingDetails] = useState<MovieDetails>({});
   const [videoKey, setVideoKey] = useState<string | null>(null);
-  const { movieId } = useParams<{ movieId: string }>();
-  const releaseDate = trendingDetails.release_date;
-  const releaseYear = releaseDate
-    ? new Date(releaseDate)?.getFullYear()
-    : undefined;
-
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? "/");
-
+  const { selectedId } = useParams<{ selectedId: string }>();
+  const mediaType = location.state?.media_type;
+  const releaseDate = trendingDetails.release_date;
+  const airDate = trendingDetails.first_air_date;
+  let releaseYear: number | undefined;
+  if (releaseDate) {
+    releaseYear = new Date(releaseDate).getFullYear();
+  } else if (airDate) {
+    releaseYear = new Date(airDate).getFullYear();
+  } else {
+    releaseYear = undefined;
+  }
+  
   useEffect(() => {
     const handleEscapeKeyPress = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setVideoKey(null);
       }
     };
-
     const handleOutsideClick = (event: MouseEvent) => {
       if (event.target !== event.currentTarget) {
         setVideoKey(null);
       }
     };
-
     document.addEventListener("keydown", handleEscapeKeyPress);
     document.addEventListener("mousedown", handleOutsideClick);
-
     return () => {
       document.removeEventListener("keydown", handleEscapeKeyPress);
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
-
-  useEffect(() => {
-    if (movieId) {
-      getMovieDetails(movieId)
-        .then((response) => {
-          setTrendingDetails(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, [movieId]);
+  
+ useEffect(() => {
+   if (selectedId) {
+     if (mediaType === "movie") {
+       getMovieDetails(selectedId)
+         .then((response) => {
+           setTrendingDetails(response.data);
+         })
+         .catch((error) => {
+           console.error(error);
+         });
+     } else if (mediaType === "tv") {
+       getTvById(selectedId)
+         .then((response) => {
+           setTrendingDetails(response.data);
+         })
+         .catch((error) => {
+           console.error(error);
+         });
+     }
+   }
+ }, [selectedId, mediaType]);
+ 
 
   const handleButtonClick = async () => {
     try {
-      if (movieId) {
-        const response = await getTrailer(movieId);
+      if (selectedId) {
+        const response = await getTrailer(selectedId);
         const results = response.data.results;
 
         if (results.length > 0) {
@@ -102,10 +118,13 @@ const TrendingDetails = () => {
                 ? `https://image.tmdb.org/t/p/w200${trendingDetails.poster_path}`
                 : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2aL_HlffoXMrgiodMTTldQmRpCJIJ9T6jOLN9hmm_kQ&s"
             }
-            alt={trendingDetails.original_title}
+            alt={
+              trendingDetails.original_title || trendingDetails.original_name
+            }
           />
           <TrendingDetailsTitle>
-            {trendingDetails.original_title} ({releaseYear})
+            {trendingDetails.original_title || trendingDetails.original_name} (
+            {releaseYear})
           </TrendingDetailsTitle>
         </TrendingImgTitleBox>
         <TrendingDetailsWrapperDescription>
@@ -129,7 +148,8 @@ const TrendingDetails = () => {
       <TrendingDetailsBtnBox>
         <Button
           component={Link}
-          to={`/movies/${movieId}/cast`}
+          to={`/selected/${selectedId}/cast`}
+          state={{ media_type: mediaType }}
           variant="contained"
           sx={TrendingDetailsBtnStyle}
         >
@@ -137,7 +157,8 @@ const TrendingDetails = () => {
         </Button>
         <Button
           component={Link}
-          to={`/movies/${movieId}/reviews`}
+          to={`/selected/${selectedId}/reviews`}
+          state={{ media_type: mediaType }}
           variant="contained"
           sx={TrendingDetailsBtnStyle}
         >
@@ -183,4 +204,4 @@ const TrendingDetails = () => {
   );
 };
 
-export default TrendingDetails;
+export default SelectedMoviesDetails;

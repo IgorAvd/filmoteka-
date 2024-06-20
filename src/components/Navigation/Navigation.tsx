@@ -9,6 +9,7 @@ export const Navigation = () => {
         <div style={{ display: "flex", gap: "16px" }}>
           <LinkStyle to="/">Movies</LinkStyle>
           <LinkStyle to="/tv-shows">Serials</LinkStyle>
+          <LinkStyle to="/selected">Selected </LinkStyle>
         </div>
       </Typography>
     </nav>

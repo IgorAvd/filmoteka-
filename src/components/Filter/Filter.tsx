@@ -18,6 +18,7 @@ export const Filter: FC<FilterProp> = ({ title, onSubmit }) => {
   const handleFilterSubmit = () => {
     dispatch(onSubmit(movieName));
   };
+  
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleFilterSubmit();
