@@ -1,6 +1,17 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+export const NavigationBox = styled.div`
+display: flex;
+gap: 16px;
+
+@media (max-width: 450px) {
+    flex-direction: column;
+    gap: 0px;
+    text-align: center;
+  }
+`
+
 export const LinkStyle = styled(NavLink)`
 font-size: 28px;
   color: #000;

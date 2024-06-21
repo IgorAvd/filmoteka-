@@ -125,4 +125,8 @@ img {
    width: 280px;
   }
   } 
+  @media (max-width: 450px) {
+    padding-top:280px;
+  }
+  }
 `;

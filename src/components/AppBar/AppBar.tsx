@@ -1,18 +1,17 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Navigation } from "../Navigation/Navigation";
-import { ToolBarStyles } from "./AppBar.styled";
+import { ToolbarBox, ToolBarStyles } from "./AppBar.styled";
 
 export const AppBarComponent: React.FC = () => {
-  return (
+  return (  
     <AppBar position="fixed" sx={{ backgroundColor: "black", display: "flex" }}>
-      <Toolbar sx={ToolBarStyles} style={{ height: "95px" }}>
+      <ToolbarBox sx={ToolBarStyles}>
         <Typography variant="h6" component="div">
           <Navigation />
-        </Typography>        
-      </Toolbar>
+        </Typography>
+      </ToolbarBox>
     </AppBar>
   );
 };

@@ -12,25 +12,25 @@ interface Review {
 }
 
 const Reviews = () => {
-  const [movieReviews, setMovieReviews] = useState<Review[] | null>(null);  
-  const { movieId, selectedId, tvShowId } = useParams<{
+const [movieReviews, setMovieReviews] = useState<Review[] | null>(null);  
+const { movieId, selectedId, tvShowId } = useParams<{
     movieId?: string;
     selectedId?: string;
     tvShowId?: string;
   }>();
-  const location = useLocation();
-  const mediaType = location.state?.media_type;
-  const initialMediaType = useRef<string | null>(
+const location = useLocation();
+const mediaType = location.state?.media_type;
+const initialMediaType = useRef<string | null>(
     mediaType || localStorage.getItem("initialMediaType")
   );
-  const [hideList, setHideList] = useState(false); 
-  const currentPath = selectedId
+const [hideList, setHideList] = useState(false); 
+const currentPath = selectedId
     ? `/selected/${selectedId}`
     : movieId
     ? `/movies/${movieId}`
       : `/tv-shows/${tvShowId}`;
   
-  const currentId = selectedId || movieId || tvShowId; 
+const currentId = selectedId || movieId || tvShowId; 
   
   useEffect(() => {
     if (mediaType) {
@@ -39,7 +39,7 @@ const Reviews = () => {
   }, [mediaType]); 
    
   useEffect(() => {
-    const fetchCredits = async (id: string) => {
+  const fetchCredits = async (id: string) => {
       try {
         if (movieId) {
           const response = await getMovieReviews(id);

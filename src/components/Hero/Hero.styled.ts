@@ -68,7 +68,10 @@ export const HeroBtnStyle = {
     "& img": {
       filter: "invert(1) brightness(100%)",
     },
-  },
+  },  
+  "@media(max-width: 450px)": {
+    top: "70px",
+  }
 };
 
 export const HeroTitle = styled.h1`

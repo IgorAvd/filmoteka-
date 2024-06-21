@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 
+export const SelectedMoviesBox = styled.div`
+margin-top: 130px;
+text-align: center;
+    
+  @media (max-width: 450px) {
+    margin-top: 210px;
+  }
+`
+
 export const PageTitle = styled.h3`
 font-size: 34px;
 margin-top: 300px;

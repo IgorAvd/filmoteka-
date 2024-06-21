@@ -7,6 +7,10 @@ export const FilterBoxStyles = {
     justifyContent: "center",
     margin: "0 auto",
     maxWidth: "530px",
+
+    '@media (max-width: 450px)': {
+        top: "210px",
+    }
 };
 
 export const FilterTextFieldStyles = {

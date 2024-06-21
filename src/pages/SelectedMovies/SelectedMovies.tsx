@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Movie } from '../../components/Trending/Trending';
 import { SelectedMoviesItem } from '../../components/SelectedMoviesItem/SelectedMoviesItem';
 import { SelectedMoviesList } from '../../components/SelectedMoviesItem/SelectedMoviesItem.styled';
-import { PageTitle } from './SelectedMovies.styled';
+import { PageTitle, SelectedMoviesBox } from './SelectedMovies.styled';
 
 const SelectedMovies = () => {
   const [selectedFilms, _] = useState<Movie[]>(() => {
@@ -11,7 +11,7 @@ const SelectedMovies = () => {
   });
 
   return (
-    <div style={{marginTop: "130px", textAlign: "center"}}>
+    <SelectedMoviesBox>
       {selectedFilms.length === 0 ? (
         <PageTitle>There are no selected films yet</PageTitle>
       ) : (
@@ -21,7 +21,7 @@ const SelectedMovies = () => {
           ))}
         </SelectedMoviesList>
       )}
-    </div>
+    </SelectedMoviesBox>
   );
 }
 

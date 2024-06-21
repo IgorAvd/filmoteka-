@@ -16,7 +16,7 @@ import { useAppSelector } from "../hooks";
 import { 
   selectSearchTvValue,
 } from "../redux/SearchBox/SearchBoxSlice";
-import { Movie } from "./Trending/Trending";
+
 export interface TvShow {
   id: number;
   title?: string;
@@ -32,8 +32,7 @@ export const TvShows = () => {
 const [selectedFilms, setSelectedFilms] = useState<TvShow[]>(() => {
   const storedSelectedFilms = localStorage.getItem("selectedFilms");
   return storedSelectedFilms ? JSON.parse(storedSelectedFilms) : [];
-});
-  console.log('data', data)
+}); 
   useEffect(() => {
     if (searchTvValue.length > 0) {
       setData(searchTvValue);
@@ -64,20 +63,7 @@ const [selectedFilms, setSelectedFilms] = useState<TvShow[]>(() => {
       setData(response.data.results);
     });
   };
-//  const handleToggleFavorite = (tvShow: TvShow) => {
-//    setSelectedFilms((prevSelectedFilms) => {
-//      if (prevSelectedFilms.some((film) => film.id === tvShow.id)) {
-//        return prevSelectedFilms.filter((film) => film.id !== tvShow.id);
-//      } else {
-//        const movie: Movie = {
-//          id: tvShow.id,
-//          title: tvShow.title || tvShow.name || "",
-//          poster_path: tvShow.poster_path,
-//        };
-//        return [...prevSelectedFilms, movie];
-//      }
-//    });
-//  };
+
  const handleToggleFavorite = (tvShow: TvShow) => {
    setSelectedFilms((prevSelectedFilms) => {
      if (prevSelectedFilms.some((film) => film.id === tvShow.id)) {

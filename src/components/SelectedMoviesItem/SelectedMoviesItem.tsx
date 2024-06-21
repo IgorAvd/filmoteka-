@@ -8,6 +8,7 @@ type Movie = {
   id: number;
   poster_path: string;
   original_title?: string;
+  original_name?: string;
   title: string;
   release_date?: string;
   overview?: string;
@@ -20,7 +21,7 @@ type SelectedMoviesItemProp = {
 
 export const SelectedMoviesItem: FC<SelectedMoviesItemProp> = ({ selected }) => {
   const [open, setOpen] = useState(false);
-const location = useLocation();
+  const location = useLocation();  
   return (
     <TrendingListItem key={selected.id}>
       <img
@@ -41,7 +42,9 @@ const location = useLocation();
         overview={selected.overview}
       />
       <TrendingItemContainer>
-        <TrendingItemTitleMovie>{selected.title}</TrendingItemTitleMovie>
+        <TrendingItemTitleMovie>
+          {selected.title || selected.original_name}
+        </TrendingItemTitleMovie>
         <Button
           component={Link}
           to={`/selected/${selected.id}`}

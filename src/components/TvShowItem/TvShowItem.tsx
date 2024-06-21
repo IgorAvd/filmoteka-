@@ -21,8 +21,7 @@ export const TvShowItem: FC<tvShowItemProp> = ({
   tvShow,
   onToggleFavorite,
   selectedFilms,
-}) => {
-  console.log('tvShow', tvShow)
+}) => { 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
